@@ -19,7 +19,7 @@ function Header() {
     date.classList.add('date');
     hTemp.classList.add('temp');
 
-    date.textContent = 'SMarch 28, 2019';
+    date.textContent = 'March 28, 2019';
     hTitle.textContent = 'Lambda Times';
     hTemp.textContent = '98 deg';
 
@@ -29,4 +29,4 @@ function Header() {
 
     return headerContent;
 }
-
+document.querySelector('.header-container').appendChild(Header())

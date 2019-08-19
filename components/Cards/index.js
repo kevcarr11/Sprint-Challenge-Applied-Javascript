@@ -19,10 +19,30 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 const cardCreator = articleData => {
-   const card = document.create('div');
+   const card = document.createElement('div');
+   const headline = document.createElement('div');
+   const author = document.createElement('div');
+   const imgContainer = document.createElement('div');
+   const img = document.createElement('img')
+   const authorName = document.createElement('span')
+
+   card.classList.add('card');
+   headline.classList.add('headline');
+   author.classList.add('author');
+   imgContainer.classList.add('img-container');
+
+   headline.textContent = articleData.headline;
+   img.src = articleData.authorPhoto;
+   authorName.textContent = articleData.authorName;
+
+   card.appendChild(headline);
+   card.appendChild(author);
+   author.appendChild(imgContainer);
+   author.appendChild(authorName);
+   imgContainer.appendChild(img);
 
 
-return 
+return card; 
 }
 
 
@@ -31,5 +51,31 @@ return
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
     console.log(response.data.articles)
-    response.data = articleData
+    response.data.articles.bootstrap.forEach(element => {
+        const cardContainer = document.querySelector('.cards-container');
+        cardContainer.appendChild(cardCreator(element))
+    })
+
+    response.data.articles.technology.forEach(element => {
+        const cardContainer = document.querySelector('.cards-container');
+        cardContainer.appendChild(cardCreator(element))
+    })
+
+    response.data.articles.jquery.forEach(element => {
+        const cardContainer = document.querySelector('.cards-container');
+        cardContainer.appendChild(cardCreator(element))
+    })
+
+    response.data.articles.node.forEach(element => {
+        const cardContainer = document.querySelector('.cards-container');
+        cardContainer.appendChild(cardCreator(element))
+    })
+
+    response.data.articles.javascript.forEach(element => {
+        const cardContainer = document.querySelector('.cards-container');
+        cardContainer.appendChild(cardCreator(element))
+    })
+})
+.catch(err => {
+    console.log(err)
 })
