@@ -5,7 +5,7 @@
 // You will be creating a component for each 'article' in the list.
 // This won't be as easy as just iterating over an array though.
 // Create a function that will programmatically create the following DOM component:
-//
+
 // <div class="card">
 //   <div class="headline">{Headline of article}</div>
 //   <div class="author">
@@ -17,3 +17,19 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+const cardCreator = articleData => {
+   const card = document.create('div');
+
+
+return 
+}
+
+
+
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+.then(response => {
+    console.log(response.data.articles)
+    response.data = articleData
+})
