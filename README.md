@@ -29,14 +29,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager
 
 1. What is the DOM?
+    The document object model is the document as a tree structure wherein each node is an object representing a part of the page.
 
 2. What is an event?
+    An event occurs when the user or the browser manipulates a page. Examples include events like pressing any key, clicking a button, closing a window, resizing a window, etc.
 
 3. What is an event listener?
+    The EventListener interface is an object that can handle an event dispatched by an targeted event object. Simply tells the browser how to handle an event that the user or browser makes on the page.
 
 4. Why would we convert a NodeList into an Array?
+    We would convert a NodeList into an Array to take advantage of Array method's like .Map, .Filter and other array methods that are not included in a NodeList.
 
 5. What is a component?
+    A component is made of several parts: HTML, CSS, or JavaScript brought together for reuse in a website or application.
 
 ### Git Set up
 
